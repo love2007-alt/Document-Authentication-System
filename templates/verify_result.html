@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Verification Result</title>
+
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+
+<body>
+
+    <div class="container">
+
+        <div class="glass-card">
+
+            {% if status == "authentic" %}
+
+                <h1 class="success-text">
+                    ✅ DOCUMENT AUTHENTIC
+                </h1>
+
+                <h2>
+                    Hash Matched Successfully
+                </h2>
+
+            {% else %}
+
+                <h1 class="danger-text">
+                    ❌ DOCUMENT TAMPERED
+                </h1>
+
+                <h2>
+                    Hash Mismatch Detected
+                </h2>
+
+            {% endif %}
+
+            <br><br>
+
+            <a href="/">
+                <button>Go To Homepage</button>
+            </a>
+
+        </div>
+
+    </div>
+
+</body>
+</html>

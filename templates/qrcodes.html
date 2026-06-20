@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>QR Gallery</title>
+
+    <link rel="stylesheet"
+          href="{{ url_for('static', filename='style.css') }}">
+
+</head>
+
+<body>
+
+    <div class="ledger-section">
+
+        <h1 class="ledger-title">
+            Generated QR Codes
+        </h1>
+
+        {% for qr in qr_images %}
+
+        <div class="glass-card">
+
+            <img
+                src="{{ url_for('static',
+                filename='qrcodes/' + qr) }}"
+                width="250"
+            >
+
+            <p>{{ qr }}</p>
+
+        </div>
+
+        <br><br>
+
+        {% endfor %}
+
+        <a href="/">
+            <button>Back To Homepage</button>
+        </a>
+
+    </div>
+
+</body>
+</html>

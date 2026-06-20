@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Shield Squad | Document Authentication System</title>
+
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+
+<body>
+
+    <div class="menu">
+
+        <a href="/verify-hash">
+    Verify Hash
+</a>
+
+        <a href="/verify-qr">
+    Verify QR
+</a>
+
+    <button class="menu-btn">
+        ☰
+    </button>
+
+    <div class="menu-content">
+
+        <a href="/generate-report">
+            Generate Report
+        </a>
+
+        <a href="/blockchain">
+            Blockchain Ledger
+        </a>
+
+        <a href="/qrcodes">
+            Generated QR Codes
+        </a>
+
+    </div>
+
+</div>
+    <div class="container">
+
+    <div class="glass-card">
+
+        <h1>DECENTRALIZED WEB 3.0</h1>
+
+        <h2>DOCUMENT AUTHENTICATION SYSTEM</h2>
+
+        <p>
+            Secure, Fast and Tamper-Proof Verification
+            using Blockchain Concepts and Cybersecurity Principles.
+        </p>
+
+        <form action="/upload" method="POST" enctype="multipart/form-data">
+
+    <input type="file" name="document" required>
+
+    <br><br>
+
+    <button type="submit">Upload Document</button>
+
+</form>
+<br><br>
+
+<form action="/verify" method="POST" enctype="multipart/form-data">
+
+    <input type="file" name="document" required>
+
+    <br><br>
+
+    <button type="submit">Verify Document</button>
+
+</form>
+
+        <div class="team-box">
+            <span>Presented By</span>
+            <h3>Shield Squad</h3>
+
+            
+        </div>
+
+    </div>
+
+
+</div>
+
+</body>
+</html>

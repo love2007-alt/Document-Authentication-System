@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Blockchain Ledger</title>
+
+    <link rel="stylesheet"
+          href="{{ url_for('static', filename='style.css') }}">
+
+</head>
+
+<body>
+
+    <div class="ledger-section">
+
+        <h1 class="ledger-title">
+            Blockchain Ledger
+        </h1>
+
+        {% for block in blockchain %}
+
+        <div class="block">
+
+            <h2>BLOCK #{{ block.index }}</h2>
+
+            <p><strong>File:</strong> {{ block.filename }}</p>
+
+            <p><strong>Timestamp:</strong> {{ block.timestamp }}</p>
+
+            <p><strong>Previous Hash:</strong></p>
+
+            <div class="hash-value">
+                {{ block.previous_hash }}
+            </div>
+
+            <p><strong>Current Hash:</strong></p>
+
+            <div class="hash-value">
+                {{ block.current_hash }}
+            </div>
+
+        </div>
+
+        {% endfor %}
+
+        <br><br>
+
+        <a href="/">
+            <button>Back To Homepage</button>
+        </a>
+
+    </div>
+
+</body>
+</html>

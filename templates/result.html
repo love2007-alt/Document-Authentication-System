@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta name="viewport"
+          content="width=device-width, initial-scale=1.0">
+
+    <title>Upload Success</title>
+
+    <link rel="stylesheet"
+          href="{{ url_for('static',
+          filename='style.css') }}">
+
+</head>
+
+<body>
+
+    <div class="container">
+
+        <div class="glass-card">
+
+            <h1 class="success-text">
+                Document Uploaded Successfully
+            </h1>
+
+            <br>
+
+            <h2>
+
+    AI Security Analysis:
+
+    {{ risk_level }}
+
+</h2>
+
+<br><br>
+
+            <h2>Generated SHA-256 Hash</h2>
+
+            <div class="hash-value">
+
+                {{ file_hash }}
+
+            </div>
+
+            <br><br>
+
+            <h2>Verification QR Code</h2>
+
+            <br>
+
+            <img
+                src="{{ url_for('static',
+                filename='qrcodes/' + qr_file) }}"
+                width="250"
+            >
+
+            <br><br>
+
+            <a href="/download-report/{{ report_file }}">
+
+    <button>
+        Download Verification Report
+    </button>
+
+</a>
+
+<br><br>
+            <a href="{{ url_for('static',
+filename='qrcodes/' + qr_file) }}"
+download>
+
+    <button>
+
+        Download QR Code
+
+    </button>
+
+</a>
+
+<br><br>
+            <a href="/">
+                <button>
+                    Back To Homepage
+                </button>
+            </a>
+
+        </div>
+
+    </div>
+
+</body>
+</html>

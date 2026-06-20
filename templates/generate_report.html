@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta name="viewport"
+          content="width=device-width, initial-scale=1.0">
+
+    <title>Generate Report</title>
+
+    <link rel="stylesheet"
+          href="{{ url_for('static',
+          filename='style.css') }}">
+
+</head>
+
+<body>
+
+<div class="container">
+
+    <div class="glass-card">
+
+        <h1>
+            Generate Verification Report
+        </h1>
+
+        <br>
+
+        <form action="/generate-report"
+              method="POST"
+              enctype="multipart/form-data">
+
+            <input type="file"
+                   name="document"
+                   required>
+
+            <br><br>
+
+            <button type="submit">
+                Generate Report
+            </button>
+
+        </form>
+
+        <br>
+
+        {% if message %}
+
+        <h2 class="danger-text">
+
+            {{ message }}
+
+        </h2>
+
+        {% endif %}
+
+        <br>
+
+        <a href="/">
+            <button>
+                Back To Homepage
+            </button>
+        </a>
+
+    </div>
+
+</div>
+
+</body>
+</html>

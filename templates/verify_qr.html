@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta name="viewport"
+          content="width=device-width, initial-scale=1.0">
+
+    <title>Verify QR</title>
+
+    <link rel="stylesheet"
+          href="{{ url_for('static',
+          filename='style.css') }}">
+
+</head>
+
+<body>
+
+<div class="container">
+
+    <div class="glass-card">
+
+        <h1>
+
+            QR Verification System
+
+        </h1>
+
+        <br>
+
+        <form action="/verify-qr"
+              method="POST"
+              enctype="multipart/form-data">
+
+            <input type="file"
+                   name="qr_image"
+                   required>
+
+            <br><br>
+
+            <button type="submit">
+
+                Verify QR
+
+            </button>
+
+        </form>
+
+        <br>
+
+        {% if result %}
+
+        <div class="hash-value">
+
+            {{ result }}
+
+        </div>
+
+        {% endif %}
+
+        <br><br>
+
+        <a href="/">
+
+            <button>
+
+                Back To Homepage
+
+            </button>
+
+        </a>
+
+    </div>
+
+</div>
+
+</body>
+</html>
